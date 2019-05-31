@@ -22,6 +22,7 @@ html {
   /* width: 80%; */
   height: 60px; 
   box-shadow: 5px 10px;
+  /* text-shadow: 0 0 .1rem black; */
   /* text-align: center; */
 }
 
@@ -29,27 +30,20 @@ html {
   margin: 20px;
 }
 
-.drumButton {
-  border-radius: 25px;
-  border: 2px solid #73AD21;
-  padding: 20px; 
-  width: 200px;
-  height: 150px; 
-}
-
 .keys {
   display: flex;
-  flex: 1;
-  min-height: 100vh;
+  /* flex: 1; */
+  min-height: 70vh;
   align-items: center;
   justify-content: center;
 }
 
 .key {
-  border: .4rem solid black;
-  border-radius: .5rem;
+  border-radius: 15px;
+  border: 2px solid rgb(0, 0, 0);
+  box-shadow: 5px 10px rgb(0, 0, 0);
   margin: 1rem;
-  font-size: 1.5rem;
+  font-size: 20%;
   padding: 1rem .5rem;
   transition: all .07s ease;
   width: 10rem;
