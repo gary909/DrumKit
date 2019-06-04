@@ -19,6 +19,7 @@ html {
   border: 2px solid rgb(0, 0, 0);
   padding: 10px; 
   margin: 10px;
+  margin-bottom: 80px;
   /* width: 80%; */
   height: 60px; 
   box-shadow: 5px 10px;
@@ -33,7 +34,7 @@ html {
 .keys {
   display: flex;
   /* flex: 1; */
-  min-height: 70vh;
+  min-height: 20px;
   align-items: center;
   justify-content: center;
 }
