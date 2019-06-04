@@ -40,12 +40,12 @@ html {
 }
 
 .key {
-  border-radius: 15px;
+  border-radius: 10px;
   border: 2px solid rgb(0, 0, 0);
   box-shadow: 5px 10px rgb(0, 0, 0);
-  margin: 1rem;
+  margin: 10px;
   font-size: 20%;
-  padding: 1rem .5rem;
+  padding: .5rem .5rem;
   transition: all .07s ease;
   width: 10rem;
   text-align: center;
