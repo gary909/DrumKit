@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Voice Of God</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css?family=Hammersmith+One|Monoton|Orbitron|Righteous&display=swap"
+    rel="stylesheet">
+</head>
+
+<body>
+  <div>
+    <h1 class="heading headingbox">Make yourself heard</h1>
+  </div>
+
+  <div class="keys">
+    <div data-key="81" class="key">
+      <kbd>Q</kbd>
+      <span class="sound">anthrBeer</span>
+    </div>
+    <div data-key="87" class="key">
+      <kbd>W</kbd>
+      <span class="sound">beNice</span>
+    </div>
+    <div data-key="69" class="key">
+      <kbd>E</kbd>
+      <span class="sound">BierMich</span>
+    </div>
+  </div>
+
+  <div class="keys">
+    <div data-key="65" class="key">
+      <kbd>A</kbd>
+      <span class="sound">BrngBeer</span>
+    </div>
+    <div data-key="83" class="key">
+      <kbd>S</kbd>
+      <span class="sound">Burp</span>
+    </div>
+    <div data-key="68" class="key">
+      <kbd>D</kbd>
+      <span class="sound">Cont</span>
+    </div>
+  </div>
+
+  <div class="keys">
+    <div data-key="90" class="key">
+      <kbd>Z</kbd>
+      <span class="sound">disgstng</span>
+    </div>
+    <div data-key="88" class="key">
+      <kbd>x</kbd>
+      <span class="sound">drugs</span>
+    </div>
+    <div data-key="67" class="key">
+      <kbd>C</kbd>
+      <span class="sound">hiEvry</span>
+    </div>
+  </div>
+
+  <div class="keys">
+    <div data-key="82" class="key">
+      <kbd>R</kbd>
+      <span class="sound">hiDrnk</span>
+    </div>
+    <div data-key="84" class="key">
+      <kbd>T</kbd>
+      <span class="sound">Lingx3</span>
+    </div>
+    <div data-key="89" class="key">
+      <kbd>Y</kbd>
+      <span class="sound">Ling1</span>
+    </div>
+  </div>
+
+  <div class="keys">
+    <div data-key="70" class="key">
+      <kbd>F</kbd>
+      <span class="sound">mann</span>
+    </div>
+    <div data-key="71" class="key">
+      <kbd>G</kbd>
+      <span class="sound">meAtent</span>
+    </div>
+    <div data-key="72" class="key">
+      <kbd>H</kbd>
+      <span class="sound">now</span>
+    </div>
+  </div>
+
+  <div class="keys">
+    <div data-key="86" class="key">
+      <kbd>V</kbd>
+      <span class="sound">schatz</span>
+    </div>
+    <div data-key="66" class="key">
+      <kbd>B</kbd>
+      <span class="sound">soStupd</span>
+    </div>
+    <div data-key="78" class="key">
+      <kbd>N</kbd>
+      <span class="sound">stoptht</span>
+    </div>
+  </div>
+
+  <div class="keys">
+    <div data-key="85" class="key">
+      <kbd>U</kbd>
+      <span class="sound">tut</span>
+    </div>
+    <div data-key="74" class="key">
+      <kbd>J</kbd>
+      <span class="sound">why</span>
+    </div>
+    <div data-key="77" class="key">
+      <kbd>M</kbd>
+      <span class="sound">uDoing</span>
+    </div>
+  </div>
+
+  <audio data-key="81" src="sounds/Voices/anotherBeer.ogg"></audio>
+  <audio data-key="87" src="sounds/Voices/beNice.ogg"></audio>
+  <audio data-key="69" src="sounds/Voices/bierMich.ogg"></audio>
+  <audio data-key="65" src="sounds/Voices/BringBeer.ogg"></audio>
+  <audio data-key="83" src="sounds/Voices/Burping.ogg"></audio>
+  <audio data-key="68" src="sounds/voices/continue.ogg"></audio>
+  <audio data-key="90" src="sounds/Voices/disgusting.ogg"></audio>
+  <audio data-key="88" src="sounds/Voices/drugs.ogg"></audio>
+  <audio data-key="67" src="sounds/Voices/hello_everybody.ogg"></audio>
+
+  <audio data-key="82" src="sounds/Voices/HelloDrunk.ogg"></audio>
+  <audio data-key="84" src="sounds/Voices/ling(multi).ogg"></audio>
+  <audio data-key="89" src="sounds/Voices/Ling(once).ogg"></audio>
+  <audio data-key="70" src="sounds/Voices/mann.ogg"></audio>
+  <audio data-key="71" src="sounds/Voices/meAttention.ogg"></audio>
+  <audio data-key="72" src="sounds/Voices/Now.ogg"></audio>
+  <audio data-key="86" src="sounds/Voices/schatze.ogg"></audio>
+  <audio data-key="66" src="sounds/Voices/soStupid.ogg"></audio>
+  <audio data-key="78" src="sounds/Voices/stopThat.ogg"></audio>
+
+  <audio data-key="85" src="sounds/Voices/tut.ogg"></audio>
+  <audio data-key="74" src="sounds/Voices/why.ogg"></audio>
+  <audio data-key="77" src="sounds/Voices/YouDoing.ogg"></audio>
+
+
+  <script>
+    function removeTransition(e) {
+      if (e.propertyName !== 'transform') return; // skips it if not a transform
+      e.target.classList.remove('playing');
+    }
+
+    function playSound(e) {
+      const audio = document.querySelector(`audio[data-key="${e.keyCode}"]`);
+      const key = document.querySelector(`div[data-key="${e.keyCode}"]`);
+      if (!audio) return; // stop the function from running everything together
+
+      key.classList.add('playing');
+      audio.currentTime = 0; // Rewind to start
+      audio.play();
+    }
+
+    const keys = Array.from(document.querySelectorAll('.key'));
+    keys.forEach(key => key.addEventListener('transitionend', removeTransition));
+    window.addEventListener('keydown', playSound);
+
+  </script>
+
+</body>
+
+</html>
